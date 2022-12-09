@@ -37,3 +37,17 @@ document.getElementById("submit").onclick = function() {
 document.getElementById("reset").onclick = function() {
     document.getElementById("emp-form").reset();
 }
+function createAndUpdateStorage(employeePayroll) {
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if (employeePayrollList != undefined) {
+        employeePayrollList.push(employeePayroll);
+    } else {
+        employeePayrollList = [employeePayroll];
+    }
+    alert(employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
+}
+
+function resetForm() {
+    document.getElementById("empForm").reset();
+}
