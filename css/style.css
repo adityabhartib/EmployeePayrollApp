@@ -97,3 +97,8 @@ body {
     border-radius: 4px;
     resize: vertical;
 } 
+.profile-radio-content {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+}
