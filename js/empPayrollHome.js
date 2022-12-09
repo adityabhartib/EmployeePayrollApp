@@ -59,3 +59,9 @@ const remove = (node) => {
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
 };
+const update = (node) => {
+    let employeeData = employeePayrollList.find(empData => empData._name == node.id);
+    if (!employeeData) return;
+    localStorage.setItem("editEmp", JSON.stringify(employeeData));
+    window.location.replace(siteProperties.addEmpPayrollPage);
+};
