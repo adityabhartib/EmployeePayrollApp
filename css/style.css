@@ -135,7 +135,7 @@ select {
   }
   .submitButton {
     border: none;
-    background-color: #97dc9c;
+    background-color: #ecf1ec;
     margin-right: 30px;
     border: 1px solid blue;
   }
@@ -143,12 +143,9 @@ select {
   .cancelButton {
     text-decoration: none;
     text-align: center;
-    background-color:rgb(221, 178, 166);
+    background-color:rgb(255, 253, 252);
   }
-  .resetButton {
-    text-align: center;
-    background-color: rgb(144, 204, 204);
-  }
+ 
   @media only screen and (max-width: 960px) {
     .cancelButton {
       margin-left: 0px;
@@ -188,3 +185,17 @@ select {
       align-items: flex-start;
     }
   }
+  .button:hover {
+    background: rgb(224, 73, 73);
+    color: white;
+}
+
+.submitButton:hover {
+    background: #0ca7a7;
+    color: white;
+}
+
+.resetButton:hover {
+    background: grey;
+    color: white;
+}
