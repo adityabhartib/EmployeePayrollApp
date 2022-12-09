@@ -64,7 +64,7 @@ body {
     opacity: 1;
 }
 .form-head {
-    font: normal normal bold 24px/37px Roboto;
+    font: bold 24px/37px Roboto;
     letter-spacing: 1px;
     color: #013d76;
     text-transform: capitalize;
