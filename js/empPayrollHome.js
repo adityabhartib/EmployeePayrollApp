@@ -14,7 +14,7 @@ const createInnerHtml = () => {
                 <td>Aditya Bharti</td>
                 <td>Male</td>
                 <td>
-                    <div class='dept-label'>HR</div>
+                    <div class='dept-label'>Sales</div>
                     <div class='dept-label'>Finance</div>
                 </td>
                 <td>4000000</td>
