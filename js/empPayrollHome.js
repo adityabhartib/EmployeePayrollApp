@@ -49,3 +49,13 @@ const getDepartmentHtml = (departmentList) => {
     }
     return departmentHtml;
 };
+const remove = (node) => {
+    let employeePayrollData = employeePayrollList.find(employeeData => employeeData._name == node.id);
+    if (!employeePayrollData) return;
+    const index = employeePayrollList.map(employeeData => employeeData._name).indexOf(employeePayrollData._name);
+    alert("Do you want to delete?");
+    employeePayrollList.splice(index, 1);
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
+    document.querySelector(".emp-count").textContent = employeePayrollList.length;
+    createInnerHtml();
+};
