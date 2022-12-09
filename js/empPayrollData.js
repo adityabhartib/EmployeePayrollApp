@@ -1,29 +1,28 @@
-class EmployeePayrollData {
+class EmployeePayroll {
+
     get id() {
-        return this._id;
+        return this.id;
     }
     set id(id) {
-        this._id = id
+        this.id = id;
     }
 
     get name() {
         return this._name;
     }
-
     set name(name) {
-        let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z]{2,}$');
+        let nameRegex = /[A-Z][a-z]{2,}/;
         if (nameRegex.test(name))
             this._name = name;
         else
-            throw new Error("Invalid Name");
+            throw "Invalid Name";
     }
 
-    get profilePic() {
-        return this._profilePic;
+    get picture() {
+        return this._picture;
     }
-
-    set profilePic(profilePic) {
-        this._profilePic = profilePic;
+    set picture(picture) {
+        this._picture = picture;
     }
 
     get gender() {
@@ -31,7 +30,6 @@ class EmployeePayrollData {
     }
 
     set gender(gender) {
-
         this._gender = gender;
     }
 
@@ -48,19 +46,17 @@ class EmployeePayrollData {
     }
 
     set salary(salary) {
-
         this._salary = salary;
-
     }
 
     get startDate() {
         return this._startDate;
     }
 
-    set startDate(startDate){
-        this._startDate=startDate;
+    set startDate(startDate) {
+        this._startDate = startDate
     }
-    
+
     get notes() {
         return this._notes;
     }
@@ -71,9 +67,7 @@ class EmployeePayrollData {
 
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const employeeDate = this.startDate == undefined ? "undefined" : 
-        this.startDate.toLocaleDateString("en-us", options);
-        return "id=" + this.id + "Name = " + this.name + ", profilePic = " + this.profilePic + ", Gender = " + this.gender + 
-        ", Department = " + this.department + ", Salary = " + this.salary + ", Start Date = " + employeeDate + ", Notes = " + this.notes;
+        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
+        return "id = " + this.id + ", name = " + this.name + ", gender = " + this.gender + ", profile picture = " + this.profilePic + ", department = " + this.department + ", salary = " + this.salary + ", startDate = " + this.startDate + ", note = " + this.note;
     }
 }
