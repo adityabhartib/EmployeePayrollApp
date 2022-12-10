@@ -110,6 +110,16 @@ const setForm = () => {
     setValue("#month", month);
     setValue("#year", date[2]);
 };
+const setSelectedValues = (propertyValue, value) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        if (Array.isArray(value)) {
+            if (value.includes(item.value))
+                item.checked = true;
+        } else if (item.value == value) item.checked = true;
+    });
+};
+
 
 const resetForm = () => {
     setValue('#name', '');
@@ -139,17 +149,6 @@ const setValue = (id, value) => {
     const element = document.getElementById(id);
     element.value = value;
 }
-
-const setSelectedValues = (propertyValue, value) => {
-    let allItems = document.querySelectorAll(propertyValue);
-    allItems.forEach(item => {
-        if (Array.isArray(value)) {
-            if (value.includes(item.value))
-                item.checked = true;
-        } else if (item.value == value) item.checked = true;
-    });
-};
-
 const checkForUpdate = () => {
     const employeePayrollJson = localStorage.getItem("editEmp");
     console.log("MSg", employeePayrollJson);
